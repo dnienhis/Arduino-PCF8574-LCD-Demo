@@ -16,7 +16,7 @@ Test / Demo Code for the i2c LCD Controller
  *  
  *  Download the .zip file then do 'add Zip Library' from Arduino IDE
  *  
- *  My Yourube video of demo is here:
+ *  My Youtube video of demo is here:
  *  https://youtu.be/_HHIXOOpkBI
  *  
  *  David Nienhiser
