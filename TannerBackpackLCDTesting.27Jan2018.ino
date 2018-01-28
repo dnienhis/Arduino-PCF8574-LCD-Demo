@@ -2,8 +2,11 @@
  *  Arduino Test/Demo code for the LCD Backpack Module I bought yesterday
  *  at Tanner Electronics (Carrollton, TX).
  *  
- *  The Base I/O address for this module is 0x3F and is specified in the
- *  constructor example below.
+ *  The Base I/O address for these modules is dependent upon the chip installed
+ *  on the module:
+ *  PCF8574AT = i2C Base I/O Address: 0x3F
+ *  PCF8574T  = i2C Base I/O Address: 0x27
+ *  The Base I/O address is supplied in the constructor example below.
  *  
  *  This code is dependent upon the Newliquidcrystal Arduino Library (the
  *  current version I downloaded/used was 1.3.5)
@@ -28,10 +31,12 @@
 #include <LCD.h>
 #include <LiquidCrystal_I2C.h>
 
-LiquidCrystal_I2C  lcd(0x3f,2,1,0,4,5,6,7); // 0x27 is the I2C bus address for an unmodified backpack
+// - The first parameter for the constructor needs to be 0x27 or 0x3F depending on which Integrated
+// - Circuit is installed on your module.
+LiquidCrystal_I2C  lcd(0x27,2,1,0,4,5,6,7); // 0x27 is the I2C bus address for an unmodified backpack
 
-#define LCD16x2 TRUE     // Comment out this line of code if using 20x4 LCD
-//#define LCD20x4 TRUE   // Comment out this line of code if using 16x2 LCD
+//#define LCD16x2 TRUE     // Comment out this line of code if using 20x4 LCD
+#define LCD20x4 TRUE   // Comment out this line of code if using 16x2 LCD
 
 void setup()
 {
